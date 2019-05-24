@@ -2,6 +2,14 @@
   "version": 2,
   "name": "express",
   "builds": [
-    { "src": "**/*.js", "use": "@now/node" }
-  ]
+    { "src": "/src/lambdas/**/*.js",
+      "use": "@now/node" }
+  ],
+  "routes": [
+    { "src":"/helloworld/(.*)",
+      "dest":"/src/lambdas/helloworld.js" }
+  ],
+  "env":{
+    "MONGO_ADDRESS": "YARY-YARH"
+  }
 }
