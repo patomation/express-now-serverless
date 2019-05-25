@@ -73,23 +73,23 @@ Edit ```now.json```
 Mongoose CRUD (Create, Read, Update, Delete)
 - Add new user
 ```
-curl -X POST -d "username=mynewuser&password=coolpassword" localhost:8080/api/v1/users
+curl -X POST -d "username=mynewuser&password=coolpassword" localhost:8080/users
 ```
 - Update Password
 ```
-curl -X PUT -d "password=newpassword" localhost:8080/api/v1/users/5cdccf0dc61e550d0b7b86e7/password
+curl -X PUT -d "password=newpassword" localhost:8080/users/5cdccf0dc61e550d0b7b86e7/password
 ```
 - Get User(s)
 ```
-curl -g  localhost:8080/api/v1/users
+curl -g  localhost:8080/users
 ```
 - Get a User by ID
 ```
-curl -g  localhost:8080/api/v1/users/5cdccf0dc61e550d0b7b86e7
+curl -g  localhost:8080/users/5cdccf0dc61e550d0b7b86e7
 ```
 - Delete user
 ```
-curl -X DELETE  localhost:8080/api/v1/users/5cdccf0dc61e550d0b7b86e7
+curl -X DELETE  localhost:8080/users/5cdccf0dc61e550d0b7b86e7
 ```
 
 
