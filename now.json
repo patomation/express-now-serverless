@@ -2,14 +2,24 @@
   "version": 2,
   "name": "express",
   "builds": [
-    { "src": "/src/lambdas/**/*.js",
+    { "src": "/src/routes/**/*.js",
       "use": "@now/node" }
   ],
   "routes": [
-    { "src":"/helloworld/(.*)",
-      "dest":"/src/lambdas/helloworld.js" }
-  ],
-  "env":{
-    "MONGO_ADDRESS": "YARY-YARH"
-  }
+    { "src":"/users([/]*)",
+     "methods": ["GET"],
+      "dest":"/src/routes/users/getUsers.js" },
+    { "src":"/users([/]*)",
+      "methods": ["POST"],
+      "dest":"/src/routes/users/addUser.js" },
+    { "src":"/users/(?<id>[^/]+)",
+      "methods": ["GET"],
+      "dest":"/src/routes/users/id/getUser.js" },
+    { "src":"/users/(?<id>[^/]+)/password",
+      "methods": ["PUT"],
+      "dest":"/src/routes/users/id/password/updateUser.js" },
+    { "src":"/users/(?<id>[^/]+)",
+      "methods": ["DELETE"],
+      "dest":"/src/routes/users/id/deleteUser.js" }
+  ]
 }
